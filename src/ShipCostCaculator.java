@@ -12,7 +12,7 @@ public class ShipCostCaculator {
     public static void main(String[] args) {
         double cost;
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the price of the item: ");
+        System.out.println("\nEnter the price of the item: ");
         cost = input.nextDouble();
         System.out.println("cost is " + cost);
 
@@ -21,10 +21,10 @@ public class ShipCostCaculator {
             System.out.println("Total price is " + cost);
         }
         else {
-            double shippingCost = cost * 0.02;
-            double totalPrice = cost + shippingCost;
-            System.out.println("Shipping cost is " + shippingCost);
-            System.out.println("Total price is " + totalPrice);
+            double ShippingCost = cost * 0.02;
+            double TotalPrice = cost + ShippingCost;
+            System.out.println("Shipping cost is " + ShippingCost);
+            System.out.println("Total price is " + TotalPrice);
         }
     }
 }
