@@ -6,25 +6,38 @@ Test runs: (insert the output widow copies here for the test runs)
 
 - valid input greater than 100
  */
+
+
 import java.util.Scanner;
 
 public class ShipCostCaculator {
     public static void main(String[] args) {
         double cost;
+        String trash;
         Scanner input = new Scanner(System.in);
         System.out.println("\nEnter the price of the item: ");
-        cost = input.nextDouble();
-        System.out.println("cost is " + cost);
 
-        if (cost >= 100) {
-            System.out.println("Shipping cost is free");
-            System.out.println("Total price is " + cost);
+        if (input.hasNextDouble()) {
+            cost = input.nextDouble();
+            input.nextLine();
+            System.out.println("cost is " + cost);
+
+            if (cost >= 100) {
+                System.out.println("Shipping cost is free");
+                System.out.println("Total price is " + cost);
+            } else {
+                double ShippingCost = cost * 0.02;
+                double TotalPrice = cost + ShippingCost;
+                System.out.println("Shipping cost is " + ShippingCost);
+                System.out.println("Total price is " + TotalPrice);
+            }
+
+        }else{
+            trash = input.nextLine();
+            input.nextLine();
+            System.out.println("Invalid input. Please enter a valid price.");
+            System.exit(0);
         }
-        else {
-            double ShippingCost = cost * 0.02;
-            double TotalPrice = cost + ShippingCost;
-            System.out.println("Shipping cost is " + ShippingCost);
-            System.out.println("Total price is " + TotalPrice);
-        }
+
     }
 }
